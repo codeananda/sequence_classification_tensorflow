@@ -13,9 +13,9 @@ We built a range of LSTM models and eventually found that an attention-based LST
 # Noteable Notebooks / Files 📕
 
 - [data_plots.ipynb](https://github.com/codeananda/sequence_classification_tensorflow/blob/main/electrochem/data_plots.ipynb) - plots of all samples, plus plots coloured by un/successful model prediction
-- [electro_augmenter.py](https://github.com/codeananda/sequence_classification_tensorflow/blob/main/electrochem/electro_augmenter.py) - Data augmentor class that lead to a huge gain in performance
+- [electro_augmenter.py](https://github.com/codeananda/sequence_classification_tensorflow/blob/main/electrochem/electro_augmenter.py) - data augmentor class that lead to a huge gain in performance
 - [train_attention_with_augmentation.ipynb](https://github.com/codeananda/sequence_classification_tensorflow/blob/main/electrochem/train_attention_with_augmentation.ipynb) - training of final attention-based model with data augmentation. This model was saved and submitted to the client.
-- [utils.py](https://github.com/codeananda/sequence_classification_tensorflow/blob/main/electrochem/utils.py) - Main file containing all functions used for model training
+- [utils.py](https://github.com/codeananda/sequence_classification_tensorflow/blob/main/electrochem/utils.py) - main file containing all functions used for model training
 
 # This Repo is a Work-in-Progress 🏗
 
