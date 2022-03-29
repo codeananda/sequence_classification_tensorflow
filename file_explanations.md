@@ -1,0 +1,49 @@
+- augmentation.ipynb
+  - rough work notebook for creating augmentation procedure - calculates constants stored in constants.py
+- constants.py
+  - constants for a) loading data and b) augmentation
+    - All cols for each analyte stored as lists
+    - Best cols for each analyte stored as lists
+      - Best = greater than 50ppb for Pb and Cd and greater than 500ppb for Cu and found by inspection for seawater
+    - CLASS_TO_LABEL and LABEL_TO_CLASS dicts
+    - Constants for data augmentation e.g. data shift left/right
+- data_loading.ipynb
+  - reads in excel files, drops unnecesary cols and creates four_class_dataset.csv
+- data_plots.ipynb
+  - plots of every analyte,
+  - the max/min values for all series
+  - plots of the 91% fold (the most successful fold in an early KFold I did) coloured by correctness of prediction
+  - Confusion matrix of 91% fold
+  - Plots of seawater but on the same scale - very different look to if each graph is on a separate scale - used to find the BEST_SW_COLS_MIN_VAL_LESS_THAN_30
+- data.py
+  - Functions to transform excel file into the 4 csv files. Most useful is get_longform_df.
+- electro_augmenter.py
+  - Data augmenter class - ElectroAugmenter(keras.utils.Sequence) used for the TF model
+- paperspace_setup.sh
+  - Installs darkmode and other essential packages onto the current active env
+- train_attention_with_augmentation.ipynb
+  - Train TF model using Kfold and data aug with different seeds having dropped 50_ppb cols.
+  - Trained a final model for 10 epochs with all data
+  - Tested final model
+  - Saved final model to submit to Sean
+- train_attention.ipynb
+  - General purpose notebook for training the attention model
+  - Initial checks that augmenter works
+  - Simple training loop (not in a function)
+  - Plotting incorrect predictions
+  - Plotting confusion matrices - normal model and then one trained with setting the CLASS_WEIGHTS param - class_weights didn't help
+  - Training with different datasets i.e. comparing all to NO_50_PPB ones.
+- train_lstm.ipynb
+  - Basic notebook used to train LSTM models and tune essential hyperparams such as the LR.
+- transform_csvs_to_keras_input.ipynb
+  - Unused notebook - nothing valuable within
+  - Stored index - voltage mapping as a pickle file - UNNECESSARY THING THAT I NEVER USED.
+  - Messed around with the shape of the LSTM input before figuring out the right shape a week or so later and that all of this head scratching was unnecessary.
+- transform_excel_files_to_csv.ipynb
+  - Create the longform csv files seawater.csv, copper.csv etc.
+- utils.py
+  - Main file containing all functions used to train TF model
+  - Note: many of these were optimized further in the PyTorch project
+  - I will have to go through this file to decide which functions to keep and which to throw.
+- 1 Backlink
+  - Sean Electrochem Files
